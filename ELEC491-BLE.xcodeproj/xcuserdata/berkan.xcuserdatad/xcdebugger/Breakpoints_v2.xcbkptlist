@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ELEC491-BLE/View Controllers/ViewController.swift"
+            timestampString = "533599423.318578"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "didDiscover(notif:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ELEC491_BLE.ViewController.didDiscover(notif: __ObjC.NSNotification) -&gt; ()"
+                  moduleName = "ELEC491-BLE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/berkan/Documents/ELEC491-BLE/ELEC491-BLE/View%20Controllers/ViewController.swift"
+                  timestampString = "532358873.436002"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "2604">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ELEC491_BLE.ViewController.didDiscover(notif: __ObjC.NSNotification) -&gt; ()"
+                  moduleName = "ELEC491-BLE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/berkan/Documents/ELEC491-BLE/ELEC491-BLE/View%20Controllers/ViewController.swift"
+                  timestampString = "532358873.437977"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

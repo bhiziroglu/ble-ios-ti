@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ELEC491-BLE/View Controllers/ViewController.swift"
-            timestampString = "533833290.172972"
+            timestampString = "533853809.671654"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "didDiscover(notif:)"
             landmarkType = "7">
             <Locations>
                <Location

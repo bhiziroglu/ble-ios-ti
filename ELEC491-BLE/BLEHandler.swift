@@ -111,6 +111,14 @@ class BLEHandler: NSObject, CBCentralManagerDelegate , CBPeripheralDelegate{
         
         let characteristics = service.characteristics
         print("Found \(characteristics?.count) characteristics!")
+        
+        
+        // SEND THE CHARACTERISTICS TO VIEW CONTROLLER TO WRITE //
+        
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didDiscoverCharacteristics"), object: characteristics)
+        
+        
     }
     
     

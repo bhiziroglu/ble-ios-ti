@@ -77,9 +77,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NotificationCenter.default.addObserver(self, selector: #selector(self.didDisconnect), name: NSNotification.Name(rawValue: "didDisconnect"), object: nil)
         
         
+        //Characteristics Listener
+        //Connection Fail Listener
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didDiscoverCharacteristics), name: NSNotification.Name(rawValue: "didDiscoverCharacteristics"), object: nil)
+        
+        
     }
     
     var discovered: [CBPeripheral] = []
+    
+    @objc func didDiscoverCharacteristics(notif: NSNotification){
+        let chars = notif.object as! [CBCharacteristic]?
+        
+        print("LISTING FOUND CHARACTERISTICS")
+        
+        // RED LED - UUID : F0001111-0451-4000-B000-000000000000
+        // GREEN LED - UUID : F0001112-0451-4000-B000-000000000000
+        
+        for ch in chars! {
+            print(ch.uuid.uuidString)
+            if (ch.uuid.uuidString == "F0001112-0451-4000-B000-000000000000"){
+                
+                var parameter = NSInteger(1)
+                let data = NSData(bytes: &parameter, length: 1)
+                
+                blePeripheral.writeValue(data as Data, for: ch, type: CBCharacteristicWriteType.withResponse)
+            }
+            
+        }
+        
+    }
+    
     
     @objc func didDisconnect(notif: NSNotification){
         print("DISCONNECTED")
@@ -108,7 +136,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         isConnected=true
         print("CONNECTED TO PERIPHERAL")
         blePeripheral.discoverServices(nil)
-        print( "DISCOVERING SERVICES NIL")
+        print( "DISCOVERING SERVICES...")
         //bleManager.centralManager.stopScan() //Stop scan
     
         //Set Target Name

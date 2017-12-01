@@ -217,6 +217,11 @@
 					DA3AEAA51FBA473C00CBF5C3 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					DA3AEABC1FBA473C00CBF5C3 = {
 						CreatedOnToolsVersion = 9.0;

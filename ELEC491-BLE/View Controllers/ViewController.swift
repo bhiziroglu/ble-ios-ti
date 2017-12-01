@@ -12,10 +12,14 @@ import CoreBluetooth
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CBPeripheralDelegate, CBPeripheralManagerDelegate {
     
+    
+    
+    
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         print("NEW PERIPHERAL STATUS")
         print(peripheral.state)
     }
+    
     
     
     @IBAction func refresh(_ sender: Any) {
@@ -80,6 +84,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @objc func didDisconnect(notif: NSNotification){
         print("DISCONNECTED")
         isConnected=false
+        
     }
     
     @objc func didFail(notif: NSNotification){
@@ -96,54 +101,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var isConnected = false
     var connectedTo:CBPeripheral? = nil
     var services:[CBService] = []
+    var targetName:String = ""
+    
     
     @objc func didConnect(notif: NSNotification){
         isConnected=true
         print("CONNECTED TO PERIPHERAL")
-        print( "DISCOVERING SERVICES NIL")
         blePeripheral.discoverServices(nil)
-    }
-    /*
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        if error != nil{
-        print("DID DISCOVER SERVICES?")
-        print("LIST OF UUIDs")
-        for service in blePeripheral.services! {
-            print("IM HERE AGAIN SERVICE")
-            let thisService = service as CBService
-            if service.uuid == LedServiceUUID {
-                blePeripheral.discoverCharacteristics(nil, for: thisService)
-                print("FOUND UUID ")
-            }
-            print(thisService.uuid)
-        }
-        }else{
-            print("ERROR IN DIDDISCOVERSERVICE")
-            print(error)
-        }
-    }*/
+        print( "DISCOVERING SERVICES NIL")
+        //bleManager.centralManager.stopScan() //Stop scan
     
-    public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?){
-        print("PERIPHERAL DID DISCOVER")
-        print(peripheral)
+        //Set Target Name
+        let target = notif.object as! CBPeripheral
+        targetName = target.name!
+        performSegue(withIdentifier: "callSegue", sender: self)
     }
-    
-    /*
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        print(" DID DISCOVER SERVICES ")
-        if let services = peripheral.services {
-            
-            for service in services {
-                print("A SERVICE")
-                print(service.uuid.uuidString)
-                if service.uuid.uuidString == "0xFFF0" {
-                    print(service)
-                    peripheral .discoverCharacteristics(nil, for: service)
-                }
-            }
-        }
-    }
- */
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         if let characteristics = service.characteristics {
@@ -187,7 +159,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("DID DISCOVER")
         
         
+        peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
         
+        /*
         
         let current = res["name"] as! CBPeripheral //Assign the discovered peripheral as our peripheral
         
@@ -196,11 +170,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             blePeripheral.delegate = self //Assign the delegate as self
         }
         
-        
-        
+        */
+        /*
         
         print(name!)
         print(rssi!)
+ 
+ */
         if(!discovered.contains(name as! CBPeripheral)){
             discovered.append(name as! CBPeripheral)
         }
@@ -208,6 +184,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.reloadData()
         }
     }
+    
+    
     
     
     @objc func powerTurnedOn(notif: NSNotification) {
@@ -229,7 +207,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.bleManager.centralManager.stopScan() //stop scanning
         self.blePeripheral = discovered[indexPath.row]
-        blePeripheral.delegate=self
+        blePeripheral.delegate = bleManager.bleHandler
         bleManager.centralManager.connect(blePeripheral, options: nil)
         
         
@@ -242,12 +220,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = discovered[indexPath.row].identifier.uuidString
+        //cell.textLabel?.text = discovered[indexPath.row].identifier.uuidString
+        cell.textLabel?.text = discovered[indexPath.row].name
         cell.backgroundColor = UIColor.gray
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         return cell
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "callSegue") {
+            let vc = segue.destination as! CallScreenViewController
+            vc.navigationItem.title = targetName
+        }
+    }
 }
 

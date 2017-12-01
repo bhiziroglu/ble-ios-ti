@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,6 +51,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sU9-Rs-BIv" id="Tgg-RU-gKe"/>
+                        <segue destination="LxL-2p-MXB" kind="push" identifier="callSegue" id="yUD-aZ-lVi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,6 +73,38 @@
             </objects>
             <point key="canvasLocation" x="1359.2" y="2.2488755622188905"/>
         </scene>
+        <!--Call Screen-->
+        <scene sceneID="Awa-8u-w6u">
+            <objects>
+                <viewController restorationIdentifier="CallScreen" storyboardIdentifier="CallScreen" title="Call Screen" id="LxL-2p-MXB" customClass="CallScreenViewController" customModule="ELEC491_BLE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="td0-Y9-Hfp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqt-bg-UrX">
+                                <rect key="frame" x="0.0" y="135" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kqt-bg-UrX" secondAttribute="height" multiplier="5:4" id="gDQ-Or-6Vf"/>
+                                </constraints>
+                                <state key="normal" image="recorder">
+                                    <color key="titleColor" red="1" green="0.050926409189463451" blue="0.06653030856344988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kqt-bg-UrX" firstAttribute="trailing" secondItem="6Uc-X3-AhB" secondAttribute="trailing" id="1Jo-lv-pQ2"/>
+                            <constraint firstItem="kqt-bg-UrX" firstAttribute="top" secondItem="6Uc-X3-AhB" secondAttribute="top" constant="71" id="3n4-z4-NlR"/>
+                            <constraint firstItem="kqt-bg-UrX" firstAttribute="leading" secondItem="6Uc-X3-AhB" secondAttribute="leading" id="kL1-ha-1dT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Uc-X3-AhB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vkg-Ww-XRe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="krW-gI-8d5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205.5999999999999" y="1016.9415292353824"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qYc-7s-jYt">
             <objects>
@@ -90,4 +124,7 @@
             <point key="canvasLocation" x="-473" y="30"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="recorder" width="400" height="300"/>
+    </resources>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA187AD81FD19E5300DDE2F3 /* CallScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */; };
 		DA3AEAAA1FBA473C00CBF5C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3AEAA91FBA473C00CBF5C3 /* AppDelegate.swift */; };
 		DA3AEAAC1FBA473C00CBF5C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3AEAAB1FBA473C00CBF5C3 /* ViewController.swift */; };
 		DA3AEAAF1FBA473C00CBF5C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3AEAAD1FBA473C00CBF5C3 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenViewController.swift; sourceTree = "<group>"; };
 		DA3AEAA61FBA473C00CBF5C3 /* ELEC491-BLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELEC491-BLE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3AEAA91FBA473C00CBF5C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA3AEAAB1FBA473C00CBF5C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				DA3AEAAB1FBA473C00CBF5C3 /* ViewController.swift */,
 				DA3AEAE01FBAE5A400CBF5C3 /* BLERequired.swift */,
+				DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				DA3AEADD1FBA47ED00CBF5C3 /* BLEHandler.swift in Sources */,
 				DA3AEAB21FBA473C00CBF5C3 /* ELEC491_BLE.xcdatamodeld in Sources */,
 				DA3AEAAA1FBA473C00CBF5C3 /* AppDelegate.swift in Sources */,
+				DA187AD81FD19E5300DDE2F3 /* CallScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

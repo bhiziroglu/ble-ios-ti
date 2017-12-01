@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fO-TQ-BhV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fO-TQ-BhV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,10 +79,45 @@
                     <view key="view" contentMode="scaleToFill" id="td0-Y9-Hfp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOW-1S-qpd">
+                                <rect key="frame" x="112" y="133" width="150" height="49"/>
+                                <color key="backgroundColor" red="1" green="0.28540877345484761" blue="0.17679693738683511" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="c37-m0-QQV"/>
+                                    <constraint firstAttribute="width" constant="150" id="rSx-Xw-JFe"/>
+                                </constraints>
+                                <state key="normal" title="TAP TO RECORD"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gT-Om-huf">
+                                <rect key="frame" x="113" y="248" width="150" height="49"/>
+                                <color key="backgroundColor" red="0.52831161710213781" green="1" blue="0.7135509904791737" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="UVt-Am-Th0"/>
+                                    <constraint firstAttribute="height" constant="49" id="iJW-2k-PCT"/>
+                                </constraints>
+                                <state key="normal" title="TAP TO LISTEN">
+                                    <color key="titleColor" red="0.073404498315614131" green="0.090597286022001455" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="listenTapped:" destination="LxL-2p-MXB" eventType="touchUpInside" id="8fx-zw-xVf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WOW-1S-qpd" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="MjC-lE-RHJ"/>
+                            <constraint firstItem="7gT-Om-huf" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="U2C-OL-gxT"/>
+                            <constraint firstItem="7gT-Om-huf" firstAttribute="top" secondItem="WOW-1S-qpd" secondAttribute="bottom" constant="66" id="seX-qz-4eT"/>
+                            <constraint firstItem="WOW-1S-qpd" firstAttribute="top" secondItem="6Uc-X3-AhB" secondAttribute="top" constant="69" id="tI3-j0-LAK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Uc-X3-AhB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Vkg-Ww-XRe"/>
+                    <connections>
+                        <outlet property="listenButton" destination="7gT-Om-huf" id="W3Y-cI-DZv"/>
+                        <outlet property="recordButton" destination="WOW-1S-qpd" id="sXQ-vG-xrA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krW-gI-8d5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

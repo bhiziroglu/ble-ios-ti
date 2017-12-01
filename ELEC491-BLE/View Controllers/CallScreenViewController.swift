@@ -10,10 +10,24 @@ import UIKit
 import AVFoundation
 
 
-class CallScreenViewController: UIViewController, AVAudioRecorderDelegate {
+class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var listenButton: UIButton!
     
-    var recordButton: UIButton!
+    @IBAction func listenTapped(_ sender: Any) {
+        
+        print("LISTEN TAPPED")
+        
+        playSound()
+      
+        
+        
+        
+    }
+    
+    
+    
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
@@ -45,9 +59,9 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate {
     
     
     func loadRecordingUI() {
-        recordButton = UIButton(frame: CGRect(x: 64, y: 64, width: 328, height: 64))
-        recordButton.setTitle("Tap to Record", for: .normal)
-        recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title1)
+        //recordButton = UIButton(frame: CGRect(x: 64, y: 64, width: 328, height: 64))
+        //recordButton.setTitle("Tap to Record", for: .normal)
+        //recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title1)
         recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
         recordButton.setTitleColor(UIColor.blue, for: .normal)
         view.addSubview(recordButton)
@@ -120,4 +134,51 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
+//    var soundPlayer : AVAudioPlayer!
+//
+//    func preparePlayer() throws{
+//
+//        do {
+//            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent("recording.m4a"))
+//            soundPlayer.delegate = self
+//            soundPlayer.prepareToPlay()
+//            soundPlayer.volume = 1.0
+//
+//        } catch  {
+//            print( "[ERROR]: AVAudioPlayer cannot find file!")
+//        }
+//
+//    }
+//
+    
+    
+    var player: AVAudioPlayer?
+    
+    func playSound() {
+        let url = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            
+            
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.m4a.rawValue)
+            
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        print("FINISHED PLAYING")
+    }
 }

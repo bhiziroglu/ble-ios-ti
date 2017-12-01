@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fO-TQ-BhV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fO-TQ-BhV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOW-1S-qpd">
-                                <rect key="frame" x="112" y="133" width="150" height="49"/>
+                                <rect key="frame" x="112.5" y="94" width="150" height="49"/>
                                 <color key="backgroundColor" red="1" green="0.28540877345484761" blue="0.17679693738683511" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="c37-m0-QQV"/>
@@ -90,7 +90,7 @@
                                 <state key="normal" title="TAP TO RECORD"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gT-Om-huf">
-                                <rect key="frame" x="113" y="248" width="150" height="49"/>
+                                <rect key="frame" x="112.5" y="189" width="150" height="49"/>
                                 <color key="backgroundColor" red="0.52831161710213781" green="1" blue="0.7135509904791737" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="UVt-Am-Th0"/>
@@ -103,51 +103,63 @@
                                     <action selector="listenTapped:" destination="LxL-2p-MXB" eventType="touchUpInside" id="8fx-zw-xVf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouh-wP-BiR">
-                                <rect key="frame" x="162.5" y="191" width="50" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouh-wP-BiR">
+                                <rect key="frame" x="162.5" y="480" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0mb-Xi-cer"/>
-                                    <constraint firstAttribute="width" constant="50" id="KZx-Nl-3bG"/>
+                                    <constraint firstAttribute="height" constant="50" id="3Sp-fv-PK3"/>
+                                    <constraint firstAttribute="width" constant="50" id="d68-TK-GiJ"/>
                                 </constraints>
-                                <state key="normal" title="RecordButton" image="record0.png"/>
-                                <state key="selected" image="record1.png"/>
+                                <state key="normal" title="RecordButton" image="record0"/>
+                                <state key="selected" image="record1"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8t-iX-fgK">
-                                <rect key="frame" x="162.5" y="309" width="50" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8t-iX-fgK">
+                                <rect key="frame" x="162.5" y="326" width="50" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="HdW-SY-app"/>
                                     <constraint firstAttribute="width" constant="50" id="UmX-Zi-dQX"/>
                                     <constraint firstAttribute="height" constant="50" id="Wox-Nm-AH7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="aj1-rR-qTd"/>
                                 </constraints>
-                                <state key="normal" title="PauseButton" image="pause0.png"/>
-                                <state key="selected" image="pause1.png"/>
+                                <state key="normal" title="PauseButton" image="pause0"/>
+                                <state key="selected" image="pause1"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeQ-fW-Asd">
-                                <rect key="frame" x="220" y="309" width="61" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeQ-fW-Asd">
+                                <rect key="frame" x="162.5" y="398" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Z6g-zu-df5"/>
                                     <constraint firstAttribute="height" constant="50" id="fGR-hS-RIZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="tlY-9J-Q96"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="txp-3S-z1k"/>
                                 </constraints>
-                                <state key="normal" title="StopButton" image="stop0.png"/>
-                                <state key="selected" image="stop1.png"/>
+                                <state key="normal" title="StopButton" image="stop0"/>
+                                <state key="selected" image="stop1"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o3-RC-Ot4">
-                                <rect key="frame" x="93" y="309" width="61" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o3-RC-Ot4">
+                                <rect key="frame" x="162.5" y="254" width="50" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="54h-f6-zU3"/>
                                     <constraint firstAttribute="width" constant="50" id="ay2-XD-FC9"/>
                                     <constraint firstAttribute="height" constant="50" id="lTU-e2-0Zg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="x78-Mr-2kC"/>
                                 </constraints>
-                                <state key="normal" title="PlayButton" image="play0.png"/>
-                                <state key="selected" image="play1.png"/>
+                                <state key="normal" title="PlayButton" image="play0"/>
+                                <state key="selected" image="play1"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ouh-wP-BiR" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="F82-AO-8Np"/>
-                            <constraint firstItem="WOW-1S-qpd" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="MjC-lE-RHJ"/>
-                            <constraint firstItem="7gT-Om-huf" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="U2C-OL-gxT"/>
-                            <constraint firstItem="7gT-Om-huf" firstAttribute="top" secondItem="WOW-1S-qpd" secondAttribute="bottom" constant="66" id="seX-qz-4eT"/>
-                            <constraint firstItem="WOW-1S-qpd" firstAttribute="top" secondItem="6Uc-X3-AhB" secondAttribute="top" constant="69" id="tI3-j0-LAK"/>
-                            <constraint firstItem="g8t-iX-fgK" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="tlR-er-WHs"/>
+                            <constraint firstItem="g8t-iX-fgK" firstAttribute="top" secondItem="4o3-RC-Ot4" secondAttribute="bottom" constant="22" id="ADG-xT-07w"/>
+                            <constraint firstItem="OeQ-fW-Asd" firstAttribute="top" secondItem="g8t-iX-fgK" secondAttribute="bottom" constant="22" id="BRP-uN-F4e"/>
+                            <constraint firstItem="g8t-iX-fgK" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="JW7-MB-hYJ"/>
+                            <constraint firstItem="4o3-RC-Ot4" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="LQr-r2-oAa"/>
+                            <constraint firstItem="4o3-RC-Ot4" firstAttribute="top" secondItem="7gT-Om-huf" secondAttribute="bottom" constant="16" id="Ljt-Nm-a1b"/>
+                            <constraint firstItem="ouh-wP-BiR" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="aI6-T3-nRk"/>
+                            <constraint firstItem="ouh-wP-BiR" firstAttribute="top" secondItem="OeQ-fW-Asd" secondAttribute="bottom" constant="32" id="b9W-Uz-RsT"/>
+                            <constraint firstItem="WOW-1S-qpd" firstAttribute="top" secondItem="6Uc-X3-AhB" secondAttribute="top" constant="30" id="e4M-ee-V1u"/>
+                            <constraint firstItem="WOW-1S-qpd" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="fBA-2H-Bok"/>
+                            <constraint firstItem="OeQ-fW-Asd" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="hRW-qz-1hs"/>
+                            <constraint firstItem="7gT-Om-huf" firstAttribute="top" secondItem="WOW-1S-qpd" secondAttribute="bottom" constant="46" id="nkF-2a-4zr"/>
+                            <constraint firstItem="7gT-Om-huf" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="pb9-3d-Pe8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Uc-X3-AhB"/>
                     </view>
@@ -181,13 +193,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pause0.png" width="50" height="50"/>
-        <image name="pause1.png" width="50" height="50"/>
-        <image name="play0.png" width="50" height="50"/>
-        <image name="play1.png" width="50" height="50"/>
-        <image name="record0.png" width="50" height="50"/>
-        <image name="record1.png" width="50" height="50"/>
-        <image name="stop0.png" width="50" height="50"/>
-        <image name="stop1.png" width="50" height="50"/>
+        <image name="pause0" width="50" height="50"/>
+        <image name="pause1" width="50" height="50"/>
+        <image name="play0" width="50" height="50"/>
+        <image name="play1" width="50" height="50"/>
+        <image name="record0" width="50" height="50"/>
+        <image name="record1" width="50" height="50"/>
+        <image name="stop0" width="50" height="50"/>
+        <image name="stop1" width="50" height="50"/>
     </resources>
 </document>

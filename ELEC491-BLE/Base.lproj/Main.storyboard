@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fO-TQ-BhV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fO-TQ-BhV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -103,13 +103,51 @@
                                     <action selector="listenTapped:" destination="LxL-2p-MXB" eventType="touchUpInside" id="8fx-zw-xVf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouh-wP-BiR">
+                                <rect key="frame" x="162.5" y="191" width="50" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0mb-Xi-cer"/>
+                                    <constraint firstAttribute="width" constant="50" id="KZx-Nl-3bG"/>
+                                </constraints>
+                                <state key="normal" title="RecordButton" image="record0.png"/>
+                                <state key="selected" image="record1.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8t-iX-fgK">
+                                <rect key="frame" x="162.5" y="309" width="50" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="UmX-Zi-dQX"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wox-Nm-AH7"/>
+                                </constraints>
+                                <state key="normal" title="PauseButton" image="pause0.png"/>
+                                <state key="selected" image="pause1.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeQ-fW-Asd">
+                                <rect key="frame" x="220" y="309" width="61" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Z6g-zu-df5"/>
+                                    <constraint firstAttribute="height" constant="50" id="fGR-hS-RIZ"/>
+                                </constraints>
+                                <state key="normal" title="StopButton" image="stop0.png"/>
+                                <state key="selected" image="stop1.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o3-RC-Ot4">
+                                <rect key="frame" x="93" y="309" width="61" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ay2-XD-FC9"/>
+                                    <constraint firstAttribute="height" constant="50" id="lTU-e2-0Zg"/>
+                                </constraints>
+                                <state key="normal" title="PlayButton" image="play0.png"/>
+                                <state key="selected" image="play1.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ouh-wP-BiR" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="F82-AO-8Np"/>
                             <constraint firstItem="WOW-1S-qpd" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="MjC-lE-RHJ"/>
                             <constraint firstItem="7gT-Om-huf" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="U2C-OL-gxT"/>
                             <constraint firstItem="7gT-Om-huf" firstAttribute="top" secondItem="WOW-1S-qpd" secondAttribute="bottom" constant="66" id="seX-qz-4eT"/>
                             <constraint firstItem="WOW-1S-qpd" firstAttribute="top" secondItem="6Uc-X3-AhB" secondAttribute="top" constant="69" id="tI3-j0-LAK"/>
+                            <constraint firstItem="g8t-iX-fgK" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="tlR-er-WHs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Uc-X3-AhB"/>
                     </view>
@@ -142,4 +180,14 @@
             <point key="canvasLocation" x="-473" y="30"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pause0.png" width="50" height="50"/>
+        <image name="pause1.png" width="50" height="50"/>
+        <image name="play0.png" width="50" height="50"/>
+        <image name="play1.png" width="50" height="50"/>
+        <image name="record0.png" width="50" height="50"/>
+        <image name="record1.png" width="50" height="50"/>
+        <image name="stop0.png" width="50" height="50"/>
+        <image name="stop1.png" width="50" height="50"/>
+    </resources>
 </document>

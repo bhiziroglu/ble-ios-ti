@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B2FBC6031FD1F3AF006C94CF /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icons; sourceTree = "<group>"; };
 		DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenViewController.swift; sourceTree = "<group>"; };
 		DA3AEAA61FBA473C00CBF5C3 /* ELEC491-BLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELEC491-BLE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3AEAA91FBA473C00CBF5C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 				DA3AEAC01FBA473C00CBF5C3 /* ELEC491-BLETests */,
 				DA3AEACB1FBA473C00CBF5C3 /* ELEC491-BLEUITests */,
 				DA3AEAA71FBA473C00CBF5C3 /* Products */,
+				B2FBC6031FD1F3AF006C94CF /* icons */,
 			);
 			sourceTree = "<group>";
 		};

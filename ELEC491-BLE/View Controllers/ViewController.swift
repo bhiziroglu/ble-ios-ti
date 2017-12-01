@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-        print("NEW PERIPHERAL STATUS")
+        print("New Peripheral Status")
         print(peripheral.state)
     }
     
@@ -110,13 +110,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @objc func didDisconnect(notif: NSNotification){
-        print("DISCONNECTED")
+        print("Disconnected")
         isConnected=false
         
     }
     
     @objc func didFail(notif: NSNotification){
-        print("COULD NOT CONNECT TO")
+        print("Could not connect to")
         let res = notif.object as! NSDictionary
         let name = res["name"]
         let error = res["error"]
@@ -134,9 +134,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @objc func didConnect(notif: NSNotification){
         isConnected=true
-        print("CONNECTED TO PERIPHERAL")
+        print("Connected to Peripheral")
         blePeripheral.discoverServices(nil)
-        print( "DISCOVERING SERVICES...")
+        print( "Discovering Services...")
         //bleManager.centralManager.stopScan() //Stop scan
     
         //Set Target Name
@@ -184,7 +184,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let name = res["name"]
         let rssi = res["rssi"]
         
-        print("DID DISCOVER")
+        print("Discovered")
         
         
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)

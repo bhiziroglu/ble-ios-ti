@@ -71,7 +71,7 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey: 12000,
+            AVSampleRateKey: 24000,
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.medium.rawValue
         ]
@@ -227,6 +227,15 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
     
     @IBAction func sendTapped(_ sender: Any) {
         print("Send Tapped")
+        let url = getDocumentsDirectory().appendingPathComponent("output.m4a")
+            do {
+                var fileSize : UInt64
+                let attr = try FileManager.default.attributesOfItem(atPath: url.path)
+                fileSize = attr[FileAttributeKey.size] as! UInt64
+                print("File size: \(fileSize)")
+            } catch {
+                print("File Size Cannot Be Calculated: \(error)")
+            }
         if(sendActive) {
             sendButton.setBackgroundImage(UIImage(named: "send1"), for: .normal)
         } else {

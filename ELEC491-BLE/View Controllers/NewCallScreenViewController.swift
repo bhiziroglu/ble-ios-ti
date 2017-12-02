@@ -119,6 +119,7 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     
     //States for audio player
     enum playerState {
@@ -171,6 +172,7 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         stopButton.setBackgroundImage(UIImage(named: "stop0"), for: .normal)
         playButton.setBackgroundImage(UIImage(named: "play0"), for: .normal)
         recButton.setBackgroundImage(UIImage(named: "record0"), for: .normal)
+        sendButton.setBackgroundImage(UIImage(named: "send0"), for: .normal)
     }
     
     @IBAction func pauseTapped(_ sender: Any) {
@@ -219,6 +221,18 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         }
         recActive = !recActive
         stateChanged()
+    }
+    
+    var sendActive = true
+    
+    @IBAction func sendTapped(_ sender: Any) {
+        print("Send Tapped")
+        if(sendActive) {
+            sendButton.setBackgroundImage(UIImage(named: "send1"), for: .normal)
+        } else {
+            sendButton.setBackgroundImage(UIImage(named: "send0"), for: .normal)
+        }
+        sendActive = !sendActive
     }
     
     override func viewDidLoad() {

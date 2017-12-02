@@ -97,10 +97,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wn-Tn-5Re">
-                                <rect key="frame" x="112" y="214" width="150" height="50"/>
+                                <rect key="frame" x="62.5" y="314" width="250" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bej-JT-5OQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVT-m1-uhf">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="FGs-aJ-aHO"/>
+                                            <constraint firstAttribute="height" constant="50" id="uzL-gQ-vwL"/>
+                                        </constraints>
+                                        <state key="normal" title="RecordButton" image="record0"/>
+                                        <state key="selected" image="record1"/>
+                                        <connections>
+                                            <action selector="recTapped:" destination="wlC-Lf-kus" eventType="touchUpInside" id="mhr-Pb-94d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bej-JT-5OQ">
+                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="3oW-Fd-xkL"/>
                                             <constraint firstAttribute="width" constant="50" id="nIa-Qm-Kwn"/>
@@ -112,7 +124,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-Hf-jMf">
-                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="100" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="D96-N4-ytH"/>
                                             <constraint firstAttribute="width" constant="50" id="ntW-qa-ddl"/>
@@ -124,7 +136,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNE-CQ-Gjb">
-                                        <rect key="frame" x="100" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="150" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="3JK-SU-mkL"/>
                                             <constraint firstAttribute="height" constant="50" id="QsG-VE-dxQ"/>
@@ -135,33 +147,29 @@
                                             <action selector="stopTapped:" destination="wlC-Lf-kus" eventType="touchUpInside" id="LoK-i4-wie"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFY-dA-Gt6" userLabel="Send Button">
+                                        <rect key="frame" x="200" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="cBC-u2-305"/>
+                                            <constraint firstAttribute="height" constant="50" id="kAD-Cb-bhR"/>
+                                        </constraints>
+                                        <state key="normal" title="SendButton" image="send0"/>
+                                        <state key="selected" image="send1"/>
+                                        <connections>
+                                            <action selector="sendTapped:" destination="wlC-Lf-kus" eventType="touchUpInside" id="PSv-AQ-mCo"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="JNO-aG-dFX"/>
-                                    <constraint firstAttribute="height" constant="50" id="b1P-7J-uad"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="bg4-uR-OoP"/>
-                                    <constraint firstAttribute="width" constant="150" id="yOT-PP-xkX"/>
+                                    <constraint firstAttribute="height" constant="50" id="GsS-cg-JQM"/>
+                                    <constraint firstAttribute="width" constant="250" id="Lah-oF-nb7"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVT-m1-uhf">
-                                <rect key="frame" x="162" y="124" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="FGs-aJ-aHO"/>
-                                    <constraint firstAttribute="height" constant="50" id="uzL-gQ-vwL"/>
-                                </constraints>
-                                <state key="normal" title="RecordButton" image="record0"/>
-                                <state key="selected" image="record1"/>
-                                <connections>
-                                    <action selector="recTapped:" destination="wlC-Lf-kus" eventType="touchUpInside" id="mhr-Pb-94d"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bVT-m1-uhf" firstAttribute="top" secondItem="1TS-3h-PM5" secondAttribute="top" constant="60" id="C7s-JU-892"/>
-                            <constraint firstItem="bVT-m1-uhf" firstAttribute="centerX" secondItem="oxi-6n-h7X" secondAttribute="centerX" id="jXA-Mr-v5V"/>
-                            <constraint firstItem="0Wn-Tn-5Re" firstAttribute="top" secondItem="bVT-m1-uhf" secondAttribute="bottom" constant="40" id="n9N-RS-tIp"/>
-                            <constraint firstItem="0Wn-Tn-5Re" firstAttribute="centerX" secondItem="bVT-m1-uhf" secondAttribute="centerX" id="zNX-6Q-LhM"/>
+                            <constraint firstItem="0Wn-Tn-5Re" firstAttribute="centerX" secondItem="oxi-6n-h7X" secondAttribute="centerX" id="0eN-BQ-MqT"/>
+                            <constraint firstItem="0Wn-Tn-5Re" firstAttribute="top" secondItem="1TS-3h-PM5" secondAttribute="top" constant="250" id="U62-Sa-uY6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1TS-3h-PM5"/>
                     </view>
@@ -170,6 +178,7 @@
                         <outlet property="pauseButton" destination="h1X-Hf-jMf" id="n78-1R-jIM"/>
                         <outlet property="playButton" destination="Bej-JT-5OQ" id="SV4-5Z-PiC"/>
                         <outlet property="recButton" destination="bVT-m1-uhf" id="voq-TM-Mx1"/>
+                        <outlet property="sendButton" destination="oFY-dA-Gt6" id="E18-Gf-QZ1"/>
                         <outlet property="stopButton" destination="TNE-CQ-Gjb" id="gAZ-qP-eGo"/>
                     </connections>
                 </viewController>
@@ -254,6 +263,8 @@
         <image name="play1" width="50" height="50"/>
         <image name="record0" width="50" height="50"/>
         <image name="record1" width="50" height="50"/>
+        <image name="send0" width="50" height="50"/>
+        <image name="send1" width="50" height="50"/>
         <image name="stop0" width="50" height="50"/>
         <image name="stop1" width="50" height="50"/>
     </resources>

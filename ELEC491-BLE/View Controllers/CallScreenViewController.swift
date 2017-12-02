@@ -11,31 +11,21 @@ import AVFoundation
 
 
 class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
-
+    
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var listenButton: UIButton!
     
     @IBAction func listenTapped(_ sender: Any) {
-        
-        print("LISTEN TAPPED")
-        
+        print("Listen Tapped")
         playSound()
-      
-        
-        
-        
     }
-    
-    
     
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -57,7 +47,6 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         
     }
     
-    
     func loadRecordingUI() {
         //recordButton = UIButton(frame: CGRect(x: 64, y: 64, width: 328, height: 64))
         //recordButton.setTitle("Tap to Record", for: .normal)
@@ -66,7 +55,6 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         recordButton.setTitleColor(UIColor.blue, for: .normal)
         view.addSubview(recordButton)
     }
-    
     
     @objc func recordTapped() {
         if audioRecorder == nil {
@@ -104,8 +92,6 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         }
     }
     
-    
-    
     func startRecording() {
         let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
         
@@ -120,14 +106,7 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
-//            let backgroundQueue = DispatchQueue(label: "com.app.queue", qos: .background)
-//            backgroundQueue.async {
-//                while(self.audioRecorder.isRecording){
-//                    sleep(2)
-//                    print("RECORDING...")
-//
-//                }
-//            }
+
             recordButton.setTitle("Tap to Stop", for: .normal)
         } catch {
             finishRecording(success: false)
@@ -151,7 +130,6 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
 //    }
 //
     
-    
     var player: AVAudioPlayer?
     
     func playSound() {
@@ -160,9 +138,6 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
-            
-            
-            
             
             /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.m4a.rawValue)
@@ -177,8 +152,7 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         }
     }
     
-    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("FINISHED PLAYING")
+        print("Finished Playing")
     }
 }

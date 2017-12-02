@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B29EA9F91FD227DF0027D567 /* NewCallScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29EA9F81FD227DF0027D567 /* NewCallScreenViewController.swift */; };
 		DA187AD81FD19E5300DDE2F3 /* CallScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */; };
 		DA3AEAAA1FBA473C00CBF5C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3AEAA91FBA473C00CBF5C3 /* AppDelegate.swift */; };
 		DA3AEAAC1FBA473C00CBF5C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3AEAAB1FBA473C00CBF5C3 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B29EA9F81FD227DF0027D567 /* NewCallScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCallScreenViewController.swift; sourceTree = "<group>"; };
 		B2FBC6031FD1F3AF006C94CF /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icons; sourceTree = "<group>"; };
 		DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenViewController.swift; sourceTree = "<group>"; };
 		DA3AEAA61FBA473C00CBF5C3 /* ELEC491-BLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELEC491-BLE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 		DA3AEAE21FBAE5A900CBF5C3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B29EA9F81FD227DF0027D567 /* NewCallScreenViewController.swift */,
 				DA3AEAAB1FBA473C00CBF5C3 /* ViewController.swift */,
 				DA3AEAE01FBAE5A400CBF5C3 /* BLERequired.swift */,
 				DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */,
@@ -292,6 +295,7 @@
 				DA3AEAAC1FBA473C00CBF5C3 /* ViewController.swift in Sources */,
 				DA3AEADB1FBA475D00CBF5C3 /* BLEManager.swift in Sources */,
 				DA3AEAE11FBAE5A400CBF5C3 /* BLERequired.swift in Sources */,
+				B29EA9F91FD227DF0027D567 /* NewCallScreenViewController.swift in Sources */,
 				DA3AEADD1FBA47ED00CBF5C3 /* BLEHandler.swift in Sources */,
 				DA3AEAB21FBA473C00CBF5C3 /* ELEC491_BLE.xcdatamodeld in Sources */,
 				DA3AEAAA1FBA473C00CBF5C3 /* AppDelegate.swift in Sources */,
@@ -462,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2B8PM6V83Y;
+				DEVELOPMENT_TEAM = KB7QQUZPLK;
 				INFOPLIST_FILE = "ELEC491-BLE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -478,7 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2B8PM6V83Y;
+				DEVELOPMENT_TEAM = KB7QQUZPLK;
 				INFOPLIST_FILE = "ELEC491-BLE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

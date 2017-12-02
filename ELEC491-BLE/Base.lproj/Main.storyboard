@@ -21,6 +21,22 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sU9-Rs-BIv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qp5-RU-oqP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Demo Berkan"/>
+                                    <connections>
+                                        <segue destination="LxL-2p-MXB" kind="show" id="Mou-qU-okO"/>
+                                    </connections>
+                                </button>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oKv-Ws-Cqx">
+                                    <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Demo Cem"/>
+                                    <connections>
+                                        <segue destination="wlC-Lf-kus" kind="show" id="2p1-QA-oUg"/>
+                                    </connections>
+                                </button>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="t4T-eS-Pti"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="SvX-bW-Z1O"/>
@@ -72,6 +88,95 @@
             </objects>
             <point key="canvasLocation" x="1359.2" y="2.2488755622188905"/>
         </scene>
+        <!--New Call Screen -->
+        <scene sceneID="IgZ-mg-iZT">
+            <objects>
+                <viewController id="wlC-Lf-kus" userLabel="New Call Screen " customClass="NewCallScreenViewController" customModule="ELEC491_BLE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oxi-6n-h7X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wn-Tn-5Re">
+                                <rect key="frame" x="112" y="214" width="150" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bej-JT-5OQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3oW-Fd-xkL"/>
+                                            <constraint firstAttribute="width" constant="50" id="nIa-Qm-Kwn"/>
+                                        </constraints>
+                                        <state key="normal" title="PlayButton" image="play0"/>
+                                        <state key="selected" image="play1"/>
+                                        <connections>
+                                            <action selector="playTapped:" destination="wlC-Lf-kus" eventType="touchUpInside" id="qxe-1B-zNh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-Hf-jMf">
+                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="D96-N4-ytH"/>
+                                            <constraint firstAttribute="width" constant="50" id="ntW-qa-ddl"/>
+                                        </constraints>
+                                        <state key="normal" title="PauseButton" image="pause0"/>
+                                        <state key="selected" image="pause1"/>
+                                        <connections>
+                                            <action selector="pauseTapped:" destination="wlC-Lf-kus" eventType="touchUpInside" id="69g-Rj-CTz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNE-CQ-Gjb">
+                                        <rect key="frame" x="100" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="3JK-SU-mkL"/>
+                                            <constraint firstAttribute="height" constant="50" id="QsG-VE-dxQ"/>
+                                        </constraints>
+                                        <state key="normal" title="StopButton" image="stop0"/>
+                                        <state key="selected" image="stop1"/>
+                                        <connections>
+                                            <action selector="stopTapped:" destination="wlC-Lf-kus" eventType="touchUpInside" id="LoK-i4-wie"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="JNO-aG-dFX"/>
+                                    <constraint firstAttribute="height" constant="50" id="b1P-7J-uad"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="bg4-uR-OoP"/>
+                                    <constraint firstAttribute="width" constant="150" id="yOT-PP-xkX"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVT-m1-uhf">
+                                <rect key="frame" x="162" y="124" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="FGs-aJ-aHO"/>
+                                    <constraint firstAttribute="height" constant="50" id="uzL-gQ-vwL"/>
+                                </constraints>
+                                <state key="normal" title="RecordButton" image="record0"/>
+                                <state key="selected" image="record1"/>
+                                <connections>
+                                    <action selector="recTapped:" destination="wlC-Lf-kus" eventType="touchUpInside" id="mhr-Pb-94d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bVT-m1-uhf" firstAttribute="top" secondItem="1TS-3h-PM5" secondAttribute="top" constant="60" id="C7s-JU-892"/>
+                            <constraint firstItem="bVT-m1-uhf" firstAttribute="centerX" secondItem="oxi-6n-h7X" secondAttribute="centerX" id="jXA-Mr-v5V"/>
+                            <constraint firstItem="0Wn-Tn-5Re" firstAttribute="top" secondItem="bVT-m1-uhf" secondAttribute="bottom" constant="40" id="n9N-RS-tIp"/>
+                            <constraint firstItem="0Wn-Tn-5Re" firstAttribute="centerX" secondItem="bVT-m1-uhf" secondAttribute="centerX" id="zNX-6Q-LhM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1TS-3h-PM5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dbx-Yf-FDM"/>
+                    <connections>
+                        <outlet property="pauseButton" destination="h1X-Hf-jMf" id="n78-1R-jIM"/>
+                        <outlet property="playButton" destination="Bej-JT-5OQ" id="SV4-5Z-PiC"/>
+                        <outlet property="recButton" destination="bVT-m1-uhf" id="voq-TM-Mx1"/>
+                        <outlet property="stopButton" destination="TNE-CQ-Gjb" id="gAZ-qP-eGo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u0q-cv-DKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-474" y="1017"/>
+        </scene>
         <!--Call Screen-->
         <scene sceneID="Awa-8u-w6u">
             <objects>
@@ -103,61 +208,11 @@
                                     <action selector="listenTapped:" destination="LxL-2p-MXB" eventType="touchUpInside" id="8fx-zw-xVf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouh-wP-BiR">
-                                <rect key="frame" x="162.5" y="480" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="3Sp-fv-PK3"/>
-                                    <constraint firstAttribute="width" constant="50" id="d68-TK-GiJ"/>
-                                </constraints>
-                                <state key="normal" title="RecordButton" image="record0"/>
-                                <state key="selected" image="record1"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8t-iX-fgK">
-                                <rect key="frame" x="162.5" y="326" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="HdW-SY-app"/>
-                                    <constraint firstAttribute="width" constant="50" id="UmX-Zi-dQX"/>
-                                    <constraint firstAttribute="height" constant="50" id="Wox-Nm-AH7"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="aj1-rR-qTd"/>
-                                </constraints>
-                                <state key="normal" title="PauseButton" image="pause0"/>
-                                <state key="selected" image="pause1"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeQ-fW-Asd">
-                                <rect key="frame" x="162.5" y="398" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Z6g-zu-df5"/>
-                                    <constraint firstAttribute="height" constant="50" id="fGR-hS-RIZ"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="tlY-9J-Q96"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="txp-3S-z1k"/>
-                                </constraints>
-                                <state key="normal" title="StopButton" image="stop0"/>
-                                <state key="selected" image="stop1"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o3-RC-Ot4">
-                                <rect key="frame" x="162.5" y="254" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="54h-f6-zU3"/>
-                                    <constraint firstAttribute="width" constant="50" id="ay2-XD-FC9"/>
-                                    <constraint firstAttribute="height" constant="50" id="lTU-e2-0Zg"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="x78-Mr-2kC"/>
-                                </constraints>
-                                <state key="normal" title="PlayButton" image="play0"/>
-                                <state key="selected" image="play1"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="g8t-iX-fgK" firstAttribute="top" secondItem="4o3-RC-Ot4" secondAttribute="bottom" constant="22" id="ADG-xT-07w"/>
-                            <constraint firstItem="OeQ-fW-Asd" firstAttribute="top" secondItem="g8t-iX-fgK" secondAttribute="bottom" constant="22" id="BRP-uN-F4e"/>
-                            <constraint firstItem="g8t-iX-fgK" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="JW7-MB-hYJ"/>
-                            <constraint firstItem="4o3-RC-Ot4" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="LQr-r2-oAa"/>
-                            <constraint firstItem="4o3-RC-Ot4" firstAttribute="top" secondItem="7gT-Om-huf" secondAttribute="bottom" constant="16" id="Ljt-Nm-a1b"/>
-                            <constraint firstItem="ouh-wP-BiR" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="aI6-T3-nRk"/>
-                            <constraint firstItem="ouh-wP-BiR" firstAttribute="top" secondItem="OeQ-fW-Asd" secondAttribute="bottom" constant="32" id="b9W-Uz-RsT"/>
                             <constraint firstItem="WOW-1S-qpd" firstAttribute="top" secondItem="6Uc-X3-AhB" secondAttribute="top" constant="30" id="e4M-ee-V1u"/>
                             <constraint firstItem="WOW-1S-qpd" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="fBA-2H-Bok"/>
-                            <constraint firstItem="OeQ-fW-Asd" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="hRW-qz-1hs"/>
                             <constraint firstItem="7gT-Om-huf" firstAttribute="top" secondItem="WOW-1S-qpd" secondAttribute="bottom" constant="46" id="nkF-2a-4zr"/>
                             <constraint firstItem="7gT-Om-huf" firstAttribute="centerX" secondItem="td0-Y9-Hfp" secondAttribute="centerX" id="pb9-3d-Pe8"/>
                         </constraints>
@@ -171,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krW-gI-8d5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205.5999999999999" y="1016.9415292353824"/>
+            <point key="canvasLocation" x="1359" y="1037"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qYc-7s-jYt">
@@ -202,4 +257,7 @@
         <image name="stop0" width="50" height="50"/>
         <image name="stop1" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yUD-aZ-lVi"/>
+    </inferredMetricsTieBreakers>
 </document>

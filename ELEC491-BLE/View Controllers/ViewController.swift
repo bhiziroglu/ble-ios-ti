@@ -12,15 +12,10 @@ import CoreBluetooth
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CBPeripheralDelegate, CBPeripheralManagerDelegate {
     
-    
-    
-    
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         print("New Peripheral Status")
         print(peripheral.state)
     }
-    
-    
     
     @IBAction func refresh(_ sender: Any) {
         bleManager.centralManager.scanForPeripherals(withServices: nil, options: nil)

@@ -80,6 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     var discovered: [CBPeripheral] = []
+    var dataService: CBCharacteristic? = nil
     
     @objc func didDiscoverCharacteristics(notif: NSNotification){
         let chars = notif.object as! [CBCharacteristic]?
@@ -91,12 +92,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         for ch in chars! {
             print(ch.uuid.uuidString)
-            if (ch.uuid.uuidString == "F0001112-0451-4000-B000-000000000000"){
+            if (ch.uuid.uuidString == "F0001111-0451-4000-B000-000000000000"){
                 
                 var parameter = NSInteger(1)
                 let data = NSData(bytes: &parameter, length: 1)
                 
                 blePeripheral.writeValue(data as Data, for: ch, type: CBCharacteristicWriteType.withResponse)
+            }else if(ch.uuid.uuidString == "F0001131-0451-4000-B000-000000000000"){
+                dataService = ch
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dataServiceChar"), object: ch)
+            
+                var parameter = NSInteger(1)
+                let data = NSData(bytes: &parameter, length: 1)
+                
+                blePeripheral.writeValue(data as Data, for: ch, type: CBCharacteristicWriteType.withResponse)
+                
+                
+            
             }
             
         }
@@ -140,66 +152,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "callSegue", sender: self)
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        if let characteristics = service.characteristics {
-            
-            for characteristic in characteristics {
-                print("LISTING CHARS")
-                print(characteristic)
-                if characteristic.properties.contains([.write]),characteristic.uuid.uuidString == "0xFFF0" {
-                    
-                    print("led control: \(characteristic)")
-                    
-                    var parameter = NSInteger(1)
-                    let data = NSData(bytes: &parameter, length: 1)
-                    
-                    peripheral.writeValue(data as Data, for: characteristic, type: .withResponse)
-                }
-            }
-        }
-    }
     
-    
-    /*
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        print("DID DISCOVER CHARACTERISTICS?")
-        var enableValue = 1
-        let enablyBytes = NSData(bytes: &enableValue, length: MemoryLayout<UInt8>.size)
-        
-        for characteristic in service.characteristics! {
-            let thisCharacteristic = characteristic as CBCharacteristic
-            if thisCharacteristic.uuid == LedServiceUUID {
-                print("sd")
-            }
-        }
-    }*/
 
     @objc func didDiscover(notif: NSNotification){
         let res = notif.object as! [String:AnyObject]
         let name = res["name"]
-        let rssi = res["rssi"]
-        
-        print("Discovered")
-        
         
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
         
-        /*
-        
-        let current = res["name"] as! CBPeripheral //Assign the discovered peripheral as our peripheral
-        
-        if(current.name == "SimpleBLEPeripheral"){
-            blePeripheral = current
-            blePeripheral.delegate = self //Assign the delegate as self
-        }
-        
-        */
-        /*
-        
-        print(name!)
-        print(rssi!)
- 
- */
         if(!discovered.contains(name as! CBPeripheral)){
             discovered.append(name as! CBPeripheral)
         }
@@ -256,6 +216,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if (segue.identifier == "callSegue") {
             let vc = segue.destination as! CallScreenViewController
             vc.navigationItem.title = targetName
+            vc.blePeripheral = blePeripheral
         }
     }
 }

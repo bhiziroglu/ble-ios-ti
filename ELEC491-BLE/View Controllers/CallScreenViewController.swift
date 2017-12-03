@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreBluetooth
 
 
 class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
@@ -15,10 +16,17 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var listenButton: UIButton!
     
+    
+    var blePeripheral: CBPeripheral!
+    // DATA - SERVICE CHAR UUID : F0001132-0451-4000-B000-000000000000
+    var dataService: CBCharacteristic!
+    
     @IBAction func listenTapped(_ sender: Any) {
         print("Listen Tapped")
         playSound()
     }
+    
+    
     
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
@@ -26,6 +34,12 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Data service char listener
+        NotificationCenter.default.addObserver(self, selector: #selector(self.dataServiceChar), name: NSNotification.Name(rawValue: "dataServiceChar"), object: nil)
+        
+        
+        
+        
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -56,6 +70,15 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         view.addSubview(recordButton)
     }
     
+    
+    @objc func dataServiceChar(notif: NSNotification) {
+        dataService = notif.object as! CBCharacteristic
+        print("DATA CHAR SET !!")
+    }
+    
+    
+    
+    
     @objc func recordTapped() {
         if audioRecorder == nil {
             startRecording()
@@ -82,10 +105,33 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         //audioRecorder = nil
         
         if success {
+            
+            DispatchQueue.main.async { //Use second thread to send the data
+            
+                let url = self.getDocumentsDirectory().appendingPathComponent("recording.m4a")
+                
+                print("SENDING RECOREDED SOUND FILE TO TI - CC2640R2")
+                let par = NSData(contentsOf: url)
+                
+              //  let sendStr = NSString(data: par as! Data, encoding: String.Encoding.utf8.rawValue)
+                
+              //  let sendData = sendStr?.data(using: 1)
+                
+                
+                
+                print("TEST SENDING....")
+                
+                var parameter2 = NSInteger(1)
+                let data2 = NSData(bytes: &parameter2, length: 1)
+                
+                
+                
+                self.blePeripheral.writeValue(par! as Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
+                
+            }
+            
             recordButton.setTitle("Tap to Re-record", for: .normal)
-            print("Browsing directory")
-            print(getDocumentsDirectory().absoluteString)
-            print(FileManager.default.contents(atPath: getDocumentsDirectory().absoluteString))
+            
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
             // recording failed :(
@@ -113,22 +159,7 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         }
     }
     
-//    var soundPlayer : AVAudioPlayer!
-//
-//    func preparePlayer() throws{
-//
-//        do {
-//            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent("recording.m4a"))
-//            soundPlayer.delegate = self
-//            soundPlayer.prepareToPlay()
-//            soundPlayer.volume = 1.0
-//
-//        } catch  {
-//            print( "[ERROR]: AVAudioPlayer cannot find file!")
-//        }
-//
-//    }
-//
+
     
     var player: AVAudioPlayer?
     
@@ -141,7 +172,6 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
             
             /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.m4a.rawValue)
-            
             
             guard let player = player else { return }
             

@@ -122,6 +122,10 @@ class BLEHandler: NSObject, CBCentralManagerDelegate , CBPeripheralDelegate{
     }
     
     
+    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: Error?) {
+        print(" DID WRITE VALUE ? ")
+        print(descriptor)
+    }
     
     
     

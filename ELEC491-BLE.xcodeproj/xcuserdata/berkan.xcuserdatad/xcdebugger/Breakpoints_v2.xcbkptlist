@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ELEC491-BLE/View Controllers/ViewController.swift"
-            timestampString = "533859167.02488"
+            timestampString = "534003355.146503"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "didDiscover(notif:)"
-            landmarkType = "7">
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "ViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"

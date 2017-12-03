@@ -218,6 +218,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             vc.navigationItem.title = targetName
             vc.blePeripheral = blePeripheral
         }
+        else if (segue.identifier == "NewCallSeque") {
+            let vc = segue.destination as! NewCallScreenViewController
+            vc.navigationItem.title = targetName
+            vc.blePeripheral = blePeripheral
+        }
     }
 }
 

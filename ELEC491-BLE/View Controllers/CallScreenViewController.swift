@@ -100,6 +100,22 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         return documentsDirectory
     }
     
+    func sendRecording() {
+        print("Trying to Send Recording to TI - CC2640R2F")
+         DispatchQueue.main.async {
+        let url = self.getDocumentsDirectory().appendingPathComponent("output.m4a")
+        let par = NSData(contentsOf: url)
+        
+        let bytesPointer = UnsafeMutableRawPointer.allocate(bytes: 10, alignedTo: 1)
+        let partitionRange = NSMakeRange(0, 10)
+        par?.getBytes(bytesPointer, range: partitionRange)
+        let ananas = bytesPointer.load(as: Data.self)
+        
+        self.blePeripheral.writeValue(ananas as Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
+            
+        }
+    }
+    
     func finishRecording(success: Bool) {
         audioRecorder.stop()
         //audioRecorder = nil
@@ -107,7 +123,8 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         if success {
             
             DispatchQueue.main.async { //Use second thread to send the data
-            
+                sendRecording()
+                /*
                 let url = self.getDocumentsDirectory().appendingPathComponent("recording.m4a")
                 
                 print("SENDING RECOREDED SOUND FILE TO TI - CC2640R2")
@@ -127,7 +144,7 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
                 
                 
                 self.blePeripheral.writeValue(par! as Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
-                
+                */
             }
             
             recordButton.setTitle("Tap to Re-record", for: .normal)

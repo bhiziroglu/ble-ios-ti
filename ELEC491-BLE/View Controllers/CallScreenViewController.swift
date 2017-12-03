@@ -109,9 +109,11 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         let bytesPointer = UnsafeMutableRawPointer.allocate(bytes: 10, alignedTo: 1)
         let partitionRange = NSMakeRange(0, 10)
         par?.getBytes(bytesPointer, range: partitionRange)
-        let ananas = bytesPointer.load(as: Data.self)
+            
+        let ananas = par?.subdata(with: NSRange.init(location: 0, length: 10))
+            
         
-        self.blePeripheral.writeValue(ananas as Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
+            self.blePeripheral.writeValue(ananas as! Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
             
         }
     }
@@ -123,7 +125,7 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         if success {
             
             DispatchQueue.main.async { //Use second thread to send the data
-                sendRecording()
+                self.sendRecording()
                 /*
                 let url = self.getDocumentsDirectory().appendingPathComponent("recording.m4a")
                 

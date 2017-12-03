@@ -134,12 +134,12 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
                 
               //  let sendData = sendStr?.data(using: 1)
                 
-                
+                print(par)
                 
                 print("TEST SENDING....")
                 
                 var parameter2 = NSInteger(1)
-                let data2 = NSData(bytes: &parameter2, length: 1)
+                let data2 = NSData(bytes: &parameter2, length: 19)
                 
                 
                 

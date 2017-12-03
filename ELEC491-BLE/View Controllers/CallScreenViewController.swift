@@ -106,15 +106,13 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         let url = self.getDocumentsDirectory().appendingPathComponent("output.m4a")
         let par = NSData(contentsOf: url)
         
-        let bytesPointer = UnsafeMutableRawPointer.allocate(bytes: 10, alignedTo: 1)
-        let partitionRange = NSMakeRange(0, 10)
-        par?.getBytes(bytesPointer, range: partitionRange)
-            
-        let ananas = par?.subdata(with: NSRange.init(location: 0, length: 10))
-            
+        let count = (par?.length)! / 10
         
+        for i in 0...count {
+            let ananas = par?.subdata(with: NSRange.init(location: i, length: 10))
             self.blePeripheral.writeValue(ananas as! Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
-            
+        }
+           
         }
     }
     

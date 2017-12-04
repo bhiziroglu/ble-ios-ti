@@ -79,8 +79,7 @@ class BLEHandler: NSObject, CBCentralManagerDelegate , CBPeripheralDelegate{
     
     ////PERIPHERAL DELEGATE////////
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        print("#############################")
-        print("IN BLE HANDLER")
+        
         if let error = error {
             print("error: \(error)")
             return
@@ -99,10 +98,6 @@ class BLEHandler: NSObject, CBCentralManagerDelegate , CBPeripheralDelegate{
     
     
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?){
-        
-        print("#############################")
-        print("IN BLE HANDLER")
-        
         
         if let error = error {
             print("error: \(error)")
@@ -128,7 +123,10 @@ class BLEHandler: NSObject, CBCentralManagerDelegate , CBPeripheralDelegate{
     }
     
     
-    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        print(" DID UPDATE VALUE ? ")
+        print(characteristic)
+    }
     
     
 }

@@ -98,7 +98,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let data = NSData(bytes: &parameter, length: 1)
                 
                 blePeripheral.writeValue(data as Data, for: ch, type: CBCharacteristicWriteType.withResponse)
-            }else if(ch.uuid.uuidString == "F0001131-0451-4000-B000-000000000000"){
+            }else if(ch.uuid.uuidString == "FFF3"){
                 dataService = ch
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dataServiceChar"), object: ch)
             

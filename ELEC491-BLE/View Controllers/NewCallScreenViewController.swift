@@ -24,6 +24,37 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         return documentsDirectory
     }
     
+    var blePeripheral: CBPeripheral!
+    // DATA - SERVICE CHAR UUID : F0001132-0451-4000-B000-000000000000
+    var dataService: CBCharacteristic!
+    
+    @objc func dataServiceChar(notif: NSNotification) {
+        dataService = notif.object as! CBCharacteristic
+        print("DATA CHAR SET !!")
+    }
+    
+    func sendRecording() {
+        print("Trying to Send Recording to TI - CC2640R2F")
+        DispatchQueue.main.async {
+            let url = self.getDocumentsDirectory().appendingPathComponent("output.m4a")
+            let par = NSData(contentsOf: url)
+            let count = (par?.length)! / 10
+            for i in 0...count {
+                let ananas = par?.subdata(with: NSRange.init(location: i, length: 10))
+                self.blePeripheral.writeValue(ananas as! Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
+            }
+            
+        }
+    }
+    
+    func sendByte() {
+        print("Trying to Send Byte to TI - CC2640R2F")
+        DispatchQueue.main.async {
+            let par = NSData(contentsOfFile: "A")
+            self.blePeripheral.writeValue(par! as Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
+        }
+    }
+    
     //sets up Audio Session
     func setupAudioSession() {
         
@@ -237,6 +268,7 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
             } catch {
                 print("File Size Cannot Be Calculated: \(error)")
             }
+        sendByte()
         if(sendActive) {
             sendButton.setBackgroundImage(UIImage(named: "send1"), for: .normal)
         } else {

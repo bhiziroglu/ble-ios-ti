@@ -34,7 +34,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Demo Cem"/>
                                     <connections>
-                                        <segue destination="wlC-Lf-kus" kind="show" id="2p1-QA-oUg"/>
+                                        <segue destination="wlC-Lf-kus" kind="show" identifier="NewCallSeqgue" id="2p1-QA-oUg"/>
                                     </connections>
                                 </button>
                                 <connections>

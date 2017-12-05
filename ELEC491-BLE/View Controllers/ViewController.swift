@@ -81,6 +81,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var discovered: [CBPeripheral] = []
     var dataService: CBCharacteristic? = nil
+    var dataService2: CBCharacteristic? = nil
+    
+    
     
     @objc func didDiscoverCharacteristics(notif: NSNotification){
         let chars = notif.object as! [CBCharacteristic]?
@@ -92,20 +95,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         for ch in chars! {
             print(ch.uuid.uuidString)
-            if (ch.uuid.uuidString == "F0001111-0451-4000-B000-000000000000"){
+            if (ch.uuid.uuidString == "FFF4"){
+                dataService2 = ch
+            
+                //Subscribe to notif event
+                self.blePeripheral.setNotifyValue(true, for: ch)
                 
-                var parameter = NSInteger(1)
-                let data = NSData(bytes: &parameter, length: 1)
                 
-                blePeripheral.writeValue(data as Data, for: ch, type: CBCharacteristicWriteType.withResponse)
             }else if(ch.uuid.uuidString == "FFF3"){
                 dataService = ch
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dataServiceChar"), object: ch)
             
-                var parameter = NSInteger(1)
-                let data = NSData(bytes: &parameter, length: 1)
+        //        var parameter = NSInteger(1)
+        //        let data = NSData(bytes: &parameter, length: 1)
                 
-                blePeripheral.writeValue(data as Data, for: ch, type: CBCharacteristicWriteType.withResponse)
+        //        blePeripheral.writeValue(data as Data, for: ch, type: CBCharacteristicWriteType.withResponse)
                 
                 
             

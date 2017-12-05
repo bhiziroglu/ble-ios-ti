@@ -28,6 +28,10 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
     var blePeripheral: CBPeripheral!
     // DATA - SERVICE CHAR UUID : F0001132-0451-4000-B000-000000000000
     var dataService: CBCharacteristic!
+    var dataService2: CBCharacteristic!
+    
+    
+    
     
     @objc func dataServiceChar(notif: NSNotification) {
         dataService = notif.object as! CBCharacteristic
@@ -291,8 +295,19 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         
         recordingSession = AVAudioSession.sharedInstance()
         setupAudioSession()
-
+        
         // Do any additional setup after loading the view.
+   
+        //Subscribe to Char 4
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didUpdateValue), name: NSNotification.Name(rawValue: "didUpdateValue"), object: nil)
+        
+        
+    
+    }
+    
+    @objc func didUpdateValue(notif: NSNotification){
+        let dd = notif.object as! CBCharacteristic
+        print(dd)
     }
 
     override func didReceiveMemoryWarning() {

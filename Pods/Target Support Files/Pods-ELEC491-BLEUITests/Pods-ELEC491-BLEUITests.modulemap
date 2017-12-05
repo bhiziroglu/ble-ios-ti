@@ -1,0 +1,6 @@
+framework module Pods_ELEC491_BLEUITests {
+  umbrella header "Pods-ELEC491-BLEUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

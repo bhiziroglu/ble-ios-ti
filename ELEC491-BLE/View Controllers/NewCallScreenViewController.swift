@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import CoreBluetooth
+import DataCompression
 
 class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
@@ -103,7 +104,7 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey: 24000,
+            AVSampleRateKey: 16000,
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.medium.rawValue
         ]
@@ -259,16 +260,24 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
     
     @IBAction func sendTapped(_ sender: Any) {
         print("Send Tapped")
-        let url = getDocumentsDirectory().appendingPathComponent("output.m4a")
+         let url = getDocumentsDirectory().appendingPathComponent("output.m4a")
+         let url2 = getDocumentsDirectory().appendingPathComponent("compressed.m4a")
             do {
                 var fileSize : UInt64
                 let attr = try FileManager.default.attributesOfItem(atPath: url.path)
                 fileSize = attr[FileAttributeKey.size] as! UInt64
                 print("File size: \(fileSize)")
+                
+                let fileData = try Data.init(contentsOf: url)
+                let compressedData = fileData.compress(withAlgorithm: .LZFSE)
+                try compressedData?.write(to: url2)
+                let attr2 = try FileManager.default.attributesOfItem(atPath: url2.path)
+                fileSize = attr2[FileAttributeKey.size] as! UInt64
+                print("Compressed size: \(fileSize)")
             } catch {
                 print("File Size Cannot Be Calculated: \(error)")
             }
-        sendByte()
+       // sendByte()
         if(sendActive) {
             sendButton.setBackgroundImage(UIImage(named: "send1"), for: .normal)
         } else {

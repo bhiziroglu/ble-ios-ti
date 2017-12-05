@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EA08CEA4426FFD0B61176D5 /* Pods_ELEC491_BLETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F45328BE74D5169C266229 /* Pods_ELEC491_BLETests.framework */; };
+		5D88025F6FE55EDADAAAB8C4 /* Pods_ELEC491_BLEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87FC2B0F80CB2080F650226 /* Pods_ELEC491_BLEUITests.framework */; };
+		96A396AD78E2FBC2AB474B79 /* Pods_ELEC491_BLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 367902EAB6C2CA3C1F2ABA8E /* Pods_ELEC491_BLE.framework */; };
 		B29EA9F91FD227DF0027D567 /* NewCallScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29EA9F81FD227DF0027D567 /* NewCallScreenViewController.swift */; };
 		DA187AD81FD19E5300DDE2F3 /* CallScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */; };
 		DA3AEAAA1FBA473C00CBF5C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3AEAA91FBA473C00CBF5C3 /* AppDelegate.swift */; };
@@ -40,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3AAACB29362F17E4248F8C /* Pods-ELEC491-BLETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELEC491-BLETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELEC491-BLETests/Pods-ELEC491-BLETests.debug.xcconfig"; sourceTree = "<group>"; };
+		299820B9DF5C1D7DE196E0C8 /* Pods-ELEC491-BLETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELEC491-BLETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELEC491-BLETests/Pods-ELEC491-BLETests.release.xcconfig"; sourceTree = "<group>"; };
+		367902EAB6C2CA3C1F2ABA8E /* Pods_ELEC491_BLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELEC491_BLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6248E7BD7248E6A932D8442B /* Pods-ELEC491-BLEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELEC491-BLEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELEC491-BLEUITests/Pods-ELEC491-BLEUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		669795C8BDDA7C32178FEEA1 /* Pods-ELEC491-BLE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELEC491-BLE.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELEC491-BLE/Pods-ELEC491-BLE.release.xcconfig"; sourceTree = "<group>"; };
+		8F219F50B73AEEC2104F78CD /* Pods-ELEC491-BLE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELEC491-BLE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ELEC491-BLE/Pods-ELEC491-BLE.debug.xcconfig"; sourceTree = "<group>"; };
+		A87FC2B0F80CB2080F650226 /* Pods_ELEC491_BLEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELEC491_BLEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29EA9F81FD227DF0027D567 /* NewCallScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCallScreenViewController.swift; sourceTree = "<group>"; };
 		B2FBC6031FD1F3AF006C94CF /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icons; sourceTree = "<group>"; };
 		DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +70,8 @@
 		DA3AEADA1FBA475D00CBF5C3 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		DA3AEADC1FBA47ED00CBF5C3 /* BLEHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEHandler.swift; sourceTree = "<group>"; };
 		DA3AEAE01FBAE5A400CBF5C3 /* BLERequired.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLERequired.swift; sourceTree = "<group>"; };
+		E6F45328BE74D5169C266229 /* Pods_ELEC491_BLETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELEC491_BLETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F202C3DD29F235071B8E4B90 /* Pods-ELEC491-BLEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELEC491-BLEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELEC491-BLEUITests/Pods-ELEC491-BLEUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A396AD78E2FBC2AB474B79 /* Pods_ELEC491_BLE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA08CEA4426FFD0B61176D5 /* Pods_ELEC491_BLETests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,12 +95,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D88025F6FE55EDADAAAB8C4 /* Pods_ELEC491_BLEUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B3BB81C54B5F291259E2D1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F219F50B73AEEC2104F78CD /* Pods-ELEC491-BLE.debug.xcconfig */,
+				669795C8BDDA7C32178FEEA1 /* Pods-ELEC491-BLE.release.xcconfig */,
+				0D3AAACB29362F17E4248F8C /* Pods-ELEC491-BLETests.debug.xcconfig */,
+				299820B9DF5C1D7DE196E0C8 /* Pods-ELEC491-BLETests.release.xcconfig */,
+				6248E7BD7248E6A932D8442B /* Pods-ELEC491-BLEUITests.debug.xcconfig */,
+				F202C3DD29F235071B8E4B90 /* Pods-ELEC491-BLEUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D725D5A7B65366A0F4BFC35D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				367902EAB6C2CA3C1F2ABA8E /* Pods_ELEC491_BLE.framework */,
+				E6F45328BE74D5169C266229 /* Pods_ELEC491_BLETests.framework */,
+				A87FC2B0F80CB2080F650226 /* Pods_ELEC491_BLEUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DA3AEA9D1FBA473C00CBF5C3 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +133,8 @@
 				DA3AEACB1FBA473C00CBF5C3 /* ELEC491-BLEUITests */,
 				DA3AEAA71FBA473C00CBF5C3 /* Products */,
 				B2FBC6031FD1F3AF006C94CF /* icons */,
+				7B3BB81C54B5F291259E2D1F /* Pods */,
+				D725D5A7B65366A0F4BFC35D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA3AEAD11FBA473C00CBF5C3 /* Build configuration list for PBXNativeTarget "ELEC491-BLE" */;
 			buildPhases = (
+				195BF67DCF969FD72A66D68D /* [CP] Check Pods Manifest.lock */,
 				DA3AEAA21FBA473C00CBF5C3 /* Sources */,
 				DA3AEAA31FBA473C00CBF5C3 /* Frameworks */,
 				DA3AEAA41FBA473C00CBF5C3 /* Resources */,
+				B841BAEFD8A02DA532D12F35 /* [CP] Embed Pods Frameworks */,
+				29E2F0E69254CC5400559303 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA3AEAD41FBA473C00CBF5C3 /* Build configuration list for PBXNativeTarget "ELEC491-BLETests" */;
 			buildPhases = (
+				4A7C6EE005DB6889150B8C13 /* [CP] Check Pods Manifest.lock */,
 				DA3AEAB91FBA473C00CBF5C3 /* Sources */,
 				DA3AEABA1FBA473C00CBF5C3 /* Frameworks */,
 				DA3AEABB1FBA473C00CBF5C3 /* Resources */,
+				EC5B9F8D217F0A2E80959A6E /* [CP] Embed Pods Frameworks */,
+				F201150C749A1411FE2F18BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,9 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA3AEAD71FBA473C00CBF5C3 /* Build configuration list for PBXNativeTarget "ELEC491-BLEUITests" */;
 			buildPhases = (
+				54075F0363B4B20001F40C41 /* [CP] Check Pods Manifest.lock */,
 				DA3AEAC41FBA473C00CBF5C3 /* Sources */,
 				DA3AEAC51FBA473C00CBF5C3 /* Frameworks */,
 				DA3AEAC61FBA473C00CBF5C3 /* Resources */,
+				E8049287F836E219014D6262 /* [CP] Embed Pods Frameworks */,
+				BA09A3B717FCABB1BF400989 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,6 +335,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		195BF67DCF969FD72A66D68D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		29E2F0E69254CC5400559303 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELEC491-BLE/Pods-ELEC491-BLE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A7C6EE005DB6889150B8C13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		54075F0363B4B20001F40C41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B841BAEFD8A02DA532D12F35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELEC491-BLE/Pods-ELEC491-BLE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA09A3B717FCABB1BF400989 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELEC491-BLEUITests/Pods-ELEC491-BLEUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8049287F836E219014D6262 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELEC491-BLEUITests/Pods-ELEC491-BLEUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC5B9F8D217F0A2E80959A6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELEC491-BLETests/Pods-ELEC491-BLETests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F201150C749A1411FE2F18BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ELEC491-BLETests/Pods-ELEC491-BLETests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA3AEAA21FBA473C00CBF5C3 /* Sources */ = {
@@ -463,10 +650,11 @@
 		};
 		DA3AEAD21FBA473C00CBF5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F219F50B73AEEC2104F78CD /* Pods-ELEC491-BLE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2B8PM6V83Y;
+				DEVELOPMENT_TEAM = KB7QQUZPLK;
 				INFOPLIST_FILE = "ELEC491-BLE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -479,10 +667,11 @@
 		};
 		DA3AEAD31FBA473C00CBF5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 669795C8BDDA7C32178FEEA1 /* Pods-ELEC491-BLE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2B8PM6V83Y;
+				DEVELOPMENT_TEAM = KB7QQUZPLK;
 				INFOPLIST_FILE = "ELEC491-BLE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -495,6 +684,7 @@
 		};
 		DA3AEAD51FBA473C00CBF5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D3AAACB29362F17E4248F8C /* Pods-ELEC491-BLETests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +702,7 @@
 		};
 		DA3AEAD61FBA473C00CBF5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 299820B9DF5C1D7DE196E0C8 /* Pods-ELEC491-BLETests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -529,6 +720,7 @@
 		};
 		DA3AEAD81FBA473C00CBF5C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6248E7BD7248E6A932D8442B /* Pods-ELEC491-BLEUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +737,7 @@
 		};
 		DA3AEAD91FBA473C00CBF5C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F202C3DD29F235071B8E4B90 /* Pods-ELEC491-BLEUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

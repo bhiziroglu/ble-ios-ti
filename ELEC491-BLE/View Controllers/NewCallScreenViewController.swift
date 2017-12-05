@@ -38,7 +38,7 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
     
     @objc func didUpdateValue(notif: NSNotification){
         let dd = notif.object as! CBCharacteristic
-        print(dd)
+        print(dd.value)
     }
     
     func sendRecording() {
@@ -46,9 +46,9 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         DispatchQueue.main.async {
             let url = self.getDocumentsDirectory().appendingPathComponent("output.m4a")
             let par = NSData(contentsOf: url)
-            let count = (par?.length)! / 10
-            for i in 0...count {
-                let ananas = par?.subdata(with: NSRange.init(location: i, length: 10))
+            let count = (par?.length)! / 2
+            for i in 0...(count-1) {
+                let ananas = par?.subdata(with: NSRange.init(location: i, length: 2))
                 self.blePeripheral.writeValue(ananas as! Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
             }
             

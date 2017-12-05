@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Demo Berkan"/>
                                     <connections>
-                                        <segue destination="LxL-2p-MXB" kind="show" id="Mou-qU-okO"/>
+                                        <segue destination="LxL-2p-MXB" kind="show" id="2Sd-yt-ssK"/>
                                     </connections>
                                 </button>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oKv-Ws-Cqx">
@@ -66,12 +66,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sU9-Rs-BIv" id="Tgg-RU-gKe"/>
-                        <segue destination="LxL-2p-MXB" kind="push" identifier="callSegue" id="yUD-aZ-lVi"/>
+                        <segue destination="wlC-Lf-kus" kind="show" identifier="callSegue" id="955-Zm-ah6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480.80000000000001" y="37.331334332833585"/>
+            <point key="canvasLocation" x="474" y="29"/>
         </scene>
         <!--BLERequired-->
         <scene sceneID="z7M-AB-IW1">
@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnH-Jy-hk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359.2" y="2.2488755622188905"/>
+            <point key="canvasLocation" x="1358" y="28"/>
         </scene>
         <!--New Call Screen -->
         <scene sceneID="IgZ-mg-iZT">
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0q-cv-DKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474" y="1017"/>
+            <point key="canvasLocation" x="-474" y="1037"/>
         </scene>
         <!--Call Screen-->
         <scene sceneID="Awa-8u-w6u">
@@ -261,7 +261,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vM0-Bh-lFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-473" y="30"/>
+            <point key="canvasLocation" x="-474" y="27"/>
         </scene>
     </scenes>
     <resources>
@@ -277,6 +277,6 @@
         <image name="stop1" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yUD-aZ-lVi"/>
+        <segue reference="955-Zm-ah6"/>
     </inferredMetricsTieBreakers>
 </document>

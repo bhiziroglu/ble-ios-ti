@@ -126,6 +126,9 @@ class BLEHandler: NSObject, CBCentralManagerDelegate , CBPeripheralDelegate{
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         print(" DID UPDATE VALUE ? ")
         print(characteristic)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "didUpdateValue"), object: characteristic)
+        
     }
     
     

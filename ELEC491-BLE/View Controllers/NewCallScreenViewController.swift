@@ -290,9 +290,15 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         // Do any additional setup after loading the view.
    
         //Subscribe to Char 4
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didUpdateValue), name: NSNotification.Name(rawValue: "didUpdateValue"), object: nil)
         
         
     
+    }
+    
+    @objc func didUpdateValue(notif: NSNotification){
+        let dd = notif.object as! CBCharacteristic
+        print(dd)
     }
 
     override func didReceiveMemoryWarning() {

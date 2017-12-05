@@ -13,6 +13,8 @@ import DataCompression
 
 class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
+    //BLUETOOTH
+    
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var player: AVAudioPlayer?
@@ -24,18 +26,19 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         let documentsDirectory = paths[0]
         return documentsDirectory
     }
-    
-    var blePeripheral: CBPeripheral!
     // DATA - SERVICE CHAR UUID : F0001132-0451-4000-B000-000000000000
+    var blePeripheral: CBPeripheral!
     var dataService: CBCharacteristic!
     var dataService2: CBCharacteristic!
     
-    
-    
-    
     @objc func dataServiceChar(notif: NSNotification) {
         dataService = notif.object as! CBCharacteristic
-        print("DATA CHAR SET !!")
+        print("DATA CHAR SET!!")
+    }
+    
+    @objc func didUpdateValue(notif: NSNotification){
+        let dd = notif.object as! CBCharacteristic
+        print(dd)
     }
     
     func sendRecording() {
@@ -59,6 +62,8 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
             self.blePeripheral.writeValue(par! as Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
         }
     }
+    
+    //AUDIO
     
     //sets up Audio Session
     func setupAudioSession() {
@@ -151,12 +156,15 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         stateChanged()
     }
     
+    //UI
+    
     //IBOutlets for buttons
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var toggleButton: UISwitch!
     
     //States for audio player
     enum playerState {
@@ -202,14 +210,15 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
             recButton.setBackgroundImage(UIImage(named: "record1"), for: .normal)
         }
     }
-    
-    //Sets up PLayer's Button images
-    func setupToggleButton() {
-        pauseButton.setBackgroundImage(UIImage(named: "pause0"), for: .normal)
-        stopButton.setBackgroundImage(UIImage(named: "stop0"), for: .normal)
-        playButton.setBackgroundImage(UIImage(named: "play0"), for: .normal)
-        recButton.setBackgroundImage(UIImage(named: "record0"), for: .normal)
-        sendButton.setBackgroundImage(UIImage(named: "send0"), for: .normal)
+
+    @IBAction func toggleTapped(_ sender: Any) {
+        print("Toggle Changed")
+        if toggleButton.isOn {
+            NotificationCenter.default.addObserver(self, selector: #selector(self.didUpdateValue), name: NSNotification.Name(rawValue: "didUpdateValue"), object: nil)}
+        else {
+            NotificationCenter.default.removeObserver(self , name: NSNotification.Name(rawValue: "didUpdateValue"), object: nil)
+        }
+        
     }
     
     @IBAction func pauseTapped(_ sender: Any) {
@@ -281,7 +290,7 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
             } catch {
                 print("File Size Cannot Be Calculated: \(error)")
             }
-       // sendByte()
+        sendByte()
         if(sendActive) {
             sendButton.setBackgroundImage(UIImage(named: "send1"), for: .normal)
         } else {
@@ -290,24 +299,14 @@ class NewCallScreenViewController: UIViewController,AVAudioRecorderDelegate, AVA
         sendActive = !sendActive
     }
     
+    //LOAD
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         recordingSession = AVAudioSession.sharedInstance()
         setupAudioSession()
-        
-        // Do any additional setup after loading the view.
-   
-        //Subscribe to Char 4
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didUpdateValue), name: NSNotification.Name(rawValue: "didUpdateValue"), object: nil)
-        
-        
-    
-    }
-    
-    @objc func didUpdateValue(notif: NSNotification){
-        let dd = notif.object as! CBCharacteristic
-        print(dd)
+
     }
 
     override func didReceiveMemoryWarning() {

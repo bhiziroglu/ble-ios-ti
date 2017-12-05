@@ -165,6 +165,13 @@
                                     <constraint firstAttribute="width" constant="250" id="Lah-oF-nb7"/>
                                 </constraints>
                             </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDa-gV-TYI">
+                                <rect key="frame" x="164" y="381" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleTapped:" destination="wlC-Lf-kus" eventType="valueChanged" id="lDC-zU-bDS"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -180,6 +187,7 @@
                         <outlet property="recButton" destination="bVT-m1-uhf" id="voq-TM-Mx1"/>
                         <outlet property="sendButton" destination="oFY-dA-Gt6" id="E18-Gf-QZ1"/>
                         <outlet property="stopButton" destination="TNE-CQ-Gjb" id="gAZ-qP-eGo"/>
+                        <outlet property="toggleButton" destination="aDa-gV-TYI" id="tQQ-Jo-GE4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0q-cv-DKS" userLabel="First Responder" sceneMemberID="firstResponder"/>

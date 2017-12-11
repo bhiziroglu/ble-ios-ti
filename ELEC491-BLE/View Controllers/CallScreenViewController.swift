@@ -9,9 +9,10 @@
 import UIKit
 import AVFoundation
 import CoreBluetooth
+import Speech
 
 
-class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate, SFSpeechRecognizerDelegate {
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var listenButton: UIButton!
@@ -71,9 +72,15 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
     }
     
     
+    
+    
+    
     @objc func dataServiceChar(notif: NSNotification) {
         dataService = notif.object as! CBCharacteristic
         print("DATA CHAR SET !!")
+        
+        
+        
     }
     
     
@@ -100,20 +107,33 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
         return documentsDirectory
     }
     
+    
+    
+    let audioEngine = AVAudioEngine()
+    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
+    
+    let request = SFSpeechAudioBufferRecognitionRequest()
+    var recognitionTask: SFSpeechRecognitionTask?
+    
+    
+    
     func sendRecording() {
         print("Trying to Send Recording to TI - CC2640R2F")
-         DispatchQueue.main.async {
-        let url = self.getDocumentsDirectory().appendingPathComponent("output.m4a")
-        let par = NSData(contentsOf: url)
         
-        let count = (par?.length)! / 1
+//         DispatchQueue.main.async {
+//        let url = self.getDocumentsDirectory().appendingPathComponent("output.m4a")
+//        let par = NSData(contentsOf: url)
+//
+//        let count = (par?.length)! / 1
+//
+//        for i in 0...(count-1) {
+//            let ananas = par?.subdata(with: NSRange.init(location: i, length: 1))
+//            self.blePeripheral.writeValue(ananas as! Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
+//        }
+//
+//        }
+        print("Speec-to-Text")
         
-        for i in 0...(count-1) {
-            let ananas = par?.subdata(with: NSRange.init(location: i, length: 1))
-            self.blePeripheral.writeValue(ananas as! Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
-        }
-           
-        }
     }
     
     func finishRecording(success: Bool) {
@@ -124,27 +144,6 @@ class CallScreenViewController: UIViewController, AVAudioRecorderDelegate, AVAud
             
             DispatchQueue.main.async { //Use second thread to send the data
                 self.sendRecording()
-                /*
-                let url = self.getDocumentsDirectory().appendingPathComponent("recording.m4a")
-                
-                print("SENDING RECOREDED SOUND FILE TO TI - CC2640R2")
-                let par = NSData(contentsOf: url)
-                
-              //  let sendStr = NSString(data: par as! Data, encoding: String.Encoding.utf8.rawValue)
-                
-              //  let sendData = sendStr?.data(using: 1)
-                
-                print(par)
-                
-                print("TEST SENDING....")
-                
-                var parameter2 = NSInteger(1)
-                let data2 = NSData(bytes: &parameter2, length: 19)
-                
-                
-                
-                self.blePeripheral.writeValue(par! as Data, for: self.dataService, type: CBCharacteristicWriteType.withResponse)
-                */
             }
             
             recordButton.setTitle("Tap to Re-record", for: .normal)

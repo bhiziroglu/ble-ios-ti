@@ -18,7 +18,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func refresh(_ sender: Any) {
-        bleManager.centralManager.scanForPeripherals(withServices: nil, options: nil)
+        //bleManager.centralManager.scanForPeripherals(withServices: nil, options: nil)
+        performSegue(withIdentifier: "speechSegue", sender: self)
+    
     }
     
     @IBAction func stop(_ sender: Any) {

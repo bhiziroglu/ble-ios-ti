@@ -23,6 +23,7 @@
 		DA3AEADB1FBA475D00CBF5C3 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3AEADA1FBA475D00CBF5C3 /* BLEManager.swift */; };
 		DA3AEADD1FBA47ED00CBF5C3 /* BLEHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3AEADC1FBA47ED00CBF5C3 /* BLEHandler.swift */; };
 		DA3AEAE11FBAE5A400CBF5C3 /* BLERequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3AEAE01FBAE5A400CBF5C3 /* BLERequired.swift */; };
+		DAC521891FDF4991002A9049 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC521881FDF4991002A9049 /* SpeechViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		DA3AEADA1FBA475D00CBF5C3 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		DA3AEADC1FBA47ED00CBF5C3 /* BLEHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEHandler.swift; sourceTree = "<group>"; };
 		DA3AEAE01FBAE5A400CBF5C3 /* BLERequired.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLERequired.swift; sourceTree = "<group>"; };
+		DAC521881FDF4991002A9049 /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		E6F45328BE74D5169C266229 /* Pods_ELEC491_BLETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELEC491_BLETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F202C3DD29F235071B8E4B90 /* Pods-ELEC491-BLEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELEC491-BLEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ELEC491-BLEUITests/Pods-ELEC491-BLEUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +191,7 @@
 				DA3AEAAB1FBA473C00CBF5C3 /* ViewController.swift */,
 				DA3AEAE01FBAE5A400CBF5C3 /* BLERequired.swift */,
 				DA187AD71FD19E5300DDE2F3 /* CallScreenViewController.swift */,
+				DAC521881FDF4991002A9049 /* SpeechViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -343,13 +346,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ELEC491-BLE-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		29E2F0E69254CC5400559303 /* [CP] Copy Pods Resources */ = {
@@ -373,13 +379,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ELEC491-BLETests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		54075F0363B4B20001F40C41 /* [CP] Check Pods Manifest.lock */ = {
@@ -388,13 +397,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ELEC491-BLEUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B841BAEFD8A02DA532D12F35 /* [CP] Embed Pods Frameworks */ = {
@@ -403,9 +415,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ELEC491-BLE/Pods-ELEC491-BLE-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DataCompression/DataCompression.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DataCompression.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -483,6 +498,7 @@
 				DA3AEADB1FBA475D00CBF5C3 /* BLEManager.swift in Sources */,
 				DA3AEAE11FBAE5A400CBF5C3 /* BLERequired.swift in Sources */,
 				B29EA9F91FD227DF0027D567 /* NewCallScreenViewController.swift in Sources */,
+				DAC521891FDF4991002A9049 /* SpeechViewController.swift in Sources */,
 				DA3AEADD1FBA47ED00CBF5C3 /* BLEHandler.swift in Sources */,
 				DA3AEAB21FBA473C00CBF5C3 /* ELEC491_BLE.xcdatamodeld in Sources */,
 				DA3AEAAA1FBA473C00CBF5C3 /* AppDelegate.swift in Sources */,
@@ -654,7 +670,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB7QQUZPLK;
+				DEVELOPMENT_TEAM = 2B8PM6V83Y;
 				INFOPLIST_FILE = "ELEC491-BLE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -671,7 +687,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB7QQUZPLK;
+				DEVELOPMENT_TEAM = 2B8PM6V83Y;
 				INFOPLIST_FILE = "ELEC491-BLE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fO-TQ-BhV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fO-TQ-BhV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Demo Berkan"/>
                                     <connections>
-                                        <segue destination="LxL-2p-MXB" kind="show" id="2Sd-yt-ssK"/>
+                                        <segue destination="LxL-2p-MXB" kind="show" identifier="callSegue" id="2Sd-yt-ssK"/>
                                     </connections>
                                 </button>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oKv-Ws-Cqx">
@@ -66,12 +66,59 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sU9-Rs-BIv" id="Tgg-RU-gKe"/>
-                        <segue destination="wlC-Lf-kus" kind="show" identifier="callSegue" id="955-Zm-ah6"/>
+                        <segue destination="wlC-Lf-kus" kind="show" identifier="callSegue2" id="955-Zm-ah6"/>
+                        <segue destination="RLC-jq-30D" kind="push" identifier="speechSegue" id="9Oi-L3-jpd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="474" y="29"/>
+        </scene>
+        <!--Speech View Controller-->
+        <scene sceneID="EPI-rJ-okh">
+            <objects>
+                <viewController id="RLC-jq-30D" customClass="SpeechViewController" customModule="ELEC491_BLE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FmC-BJ-Xtq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6O-Kq-yD4">
+                                <rect key="frame" x="97.5" y="561" width="180" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Start Recording"/>
+                                <connections>
+                                    <action selector="microphoneTapped:" destination="RLC-jq-30D" eventType="touchUpInside" id="4ac-lv-bkU"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EQg-Qh-JP0">
+                                <rect key="frame" x="0.0" y="64" width="375" height="475"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jgb-hD-BbA" firstAttribute="bottom" secondItem="p6O-Kq-yD4" secondAttribute="bottom" constant="72" id="6C5-1v-K9E"/>
+                            <constraint firstItem="p6O-Kq-yD4" firstAttribute="centerX" secondItem="FmC-BJ-Xtq" secondAttribute="centerX" id="8ro-C9-Ydf"/>
+                            <constraint firstItem="p6O-Kq-yD4" firstAttribute="leading" secondItem="Jgb-hD-BbA" secondAttribute="leading" constant="97.5" id="SOk-M8-HCe"/>
+                            <constraint firstItem="Jgb-hD-BbA" firstAttribute="trailing" secondItem="p6O-Kq-yD4" secondAttribute="trailing" constant="97.5" id="bLE-6h-EiB"/>
+                            <constraint firstItem="p6O-Kq-yD4" firstAttribute="top" secondItem="EQg-Qh-JP0" secondAttribute="bottom" constant="22" id="eu3-Yb-cb4"/>
+                            <constraint firstItem="EQg-Qh-JP0" firstAttribute="trailing" secondItem="Jgb-hD-BbA" secondAttribute="trailing" id="p7p-wT-eYC"/>
+                            <constraint firstItem="EQg-Qh-JP0" firstAttribute="leading" secondItem="Jgb-hD-BbA" secondAttribute="leading" id="tRY-DU-HnA"/>
+                            <constraint firstItem="EQg-Qh-JP0" firstAttribute="top" secondItem="Jgb-hD-BbA" secondAttribute="top" id="zGu-aq-ZWO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jgb-hD-BbA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OaE-DA-vpk"/>
+                    <connections>
+                        <outlet property="microphoneButton" destination="p6O-Kq-yD4" id="f4s-UH-dch"/>
+                        <outlet property="textView" destination="EQg-Qh-JP0" id="CYf-vu-fhM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t7e-Vh-poC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1416.8" y="10.344827586206897"/>
         </scene>
         <!--BLERequired-->
         <scene sceneID="z7M-AB-IW1">
@@ -86,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnH-Jy-hk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="28"/>
+            <point key="canvasLocation" x="2724" y="12"/>
         </scene>
         <!--New Call Screen -->
         <scene sceneID="IgZ-mg-iZT">
